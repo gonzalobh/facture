@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Facture.mu – Facturación electrónica simple</title>
-  <meta name="description" content="Crea facturas profesionales, automatiza impuestos y controla cobros en tiempo real con Facture.mu. Diseño minimalista, rápido y seguro." />
+  <title>Facture.mu – Facturation électronique simple</title>
+  <meta name="description" content="Créez des factures professionnelles, automatisez les taxes et contrôlez vos encaissements en temps réel avec Facture.mu. Design minimaliste, rapide et sécurisé." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
   </script>
 
   <style>
-    /* micro detalle para “feeling” premium */
+    /* micro détail pour une sensation premium */
     .grain {
       background-image:
         radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
@@ -44,11 +44,11 @@
   <!-- Top Notice -->
   <div class="w-full bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
-      <p class="text-xs sm:text-sm text-gray-700">
-        Facture.mu • Facturación electrónica moderna para Isla Mauricio
+      <p class="text-xs sm:text-sm text-gray-700" data-i18n="topNotice">
+        Facture.mu • Facturation électronique moderne pour l'île Maurice
       </p>
-      <a href="#pricing" class="text-xs sm:text-sm text-gray-900 underline underline-offset-4 hover:text-black">
-        Ver planes
+      <a href="#pricing" class="text-xs sm:text-sm text-gray-900 underline underline-offset-4 hover:text-black" data-i18n="topNoticeLink">
+        Voir les plans
       </a>
     </div>
   </div>
@@ -66,20 +66,25 @@
 
       <!-- Nav -->
       <nav class="hidden md:flex items-center gap-6 text-sm text-gray-700">
-        <a href="#features" class="hover:text-black">Funciones</a>
-        <a href="#how" class="hover:text-black">Cómo funciona</a>
-        <a href="#security" class="hover:text-black">Seguridad</a>
-        <a href="#faq" class="hover:text-black">FAQ</a>
+        <a href="#features" class="hover:text-black" data-i18n="navFeatures">Fonctionnalités</a>
+        <a href="#how" class="hover:text-black" data-i18n="navHow">Comment ça marche</a>
+        <a href="#security" class="hover:text-black" data-i18n="navSecurity">Sécurité</a>
+        <a href="#faq" class="hover:text-black" data-i18n="navFaq">FAQ</a>
       </nav>
 
       <!-- Actions -->
       <div class="flex items-center gap-2">
-        <a href="#login" class="hidden sm:inline-flex px-4 py-2 rounded-full text-sm font-medium text-gray-900 hover:bg-gray-100">
-          Iniciar sesión
+        <select id="language-select" class="hidden sm:inline-flex px-3 py-2 rounded-full text-sm font-medium text-gray-900 border border-gray-200 bg-white hover:bg-gray-50">
+          <option value="fr" data-i18n-option="langFrench">Français (FR)</option>
+          <option value="en" data-i18n-option="langEnglish">English (EN)</option>
+          <option value="mfe" data-i18n-option="langCreole">Kreol Morisien</option>
+        </select>
+        <a href="#login" class="hidden sm:inline-flex px-4 py-2 rounded-full text-sm font-medium text-gray-900 hover:bg-gray-100" data-i18n="login">
+          Se connecter
         </a>
         <a href="#cta"
-          class="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-black text-white hover:bg-gray-900 shadow-soft2">
-          Crear cuenta
+          class="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-black text-white hover:bg-gray-900 shadow-soft2" data-i18n="ctaCreate">
+          Créer un compte
         </a>
       </div>
     </div>
@@ -96,29 +101,26 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10 lg:pt-20 lg:pb-16 relative">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs text-gray-700 shadow-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
-            Facturación electrónica sin fricción
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs text-gray-700 shadow-sm" data-i18n="heroTag">
+            Facturation électronique sans friction
           </div>
 
-          <h1 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.08]">
-            Factura fácil y sin errores con
-            <span class="text-gray-500">Facture.mu</span>
+          <h1 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.08]" data-i18n-html="true" data-i18n="heroHeading">
+            Facturez facilement et sans erreurs avec <span class="text-gray-500">Facture.mu</span>
           </h1>
 
-          <p class="mt-5 text-base sm:text-lg text-gray-600 max-w-xl">
-            Crea facturas profesionales, automatiza cálculos, gestiona clientes y controla tus cobros en tiempo real.
-            Minimalista, rápido y hecho para trabajar en serio.
+          <p class="mt-5 text-base sm:text-lg text-gray-600 max-w-xl" data-i18n="heroSub">
+            Créez des factures professionnelles, automatisez les calculs, gérez vos clients et contrôlez vos encaissements en temps réel. Minimaliste, rapide et fait pour travailler sérieusement.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
             <a href="#cta"
-              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft">
-              Probar gratis
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft" data-i18n="heroPrimary">
+              Essayer gratuitement
             </a>
             <a href="#features"
-              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
-              Ver funciones
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50" data-i18n="heroSecondary">
+              Voir les fonctionnalités
             </a>
           </div>
 
@@ -128,8 +130,8 @@
               <span class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></span>
               <span class="w-8 h-8 rounded-full bg-gray-100 border-2 border-white"></span>
             </div>
-            <p>
-              <span class="font-semibold text-gray-900">95%</span> de usuarios dicen “más rápido que mi Excel”.
+            <p data-i18n-html="true" data-i18n="heroStat">
+              <span class="font-semibold text-gray-900">95%</span> des utilisateurs disent « plus rapide que mon Excel ».
             </p>
           </div>
         </div>
@@ -139,52 +141,52 @@
           <div class="relative bg-white border border-gray-200 rounded-3xl shadow-soft p-5 sm:p-7">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-sm text-gray-600">Panel</p>
-                <p class="text-lg font-semibold">Resumen de facturación</p>
+                <p class="text-sm text-gray-600" data-i18n="heroPanel">Tableau de bord</p>
+                <p class="text-lg font-semibold" data-i18n="heroPanelTitle">Résumé de facturation</p>
               </div>
-              <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700">
-                <span class="w-2 h-2 rounded-full bg-gray-900"></span> En tiempo real
+              <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700" data-i18n-html="true" data-i18n="heroRealtime">
+                <span class="w-2 h-2 rounded-full bg-gray-900"></span> En temps réel
               </span>
             </div>
 
             <div class="mt-6 grid sm:grid-cols-3 gap-3">
               <div class="rounded-2xl border border-gray-200 p-4">
-                <p class="text-xs text-gray-600">Cobrado (mes)</p>
+                <p class="text-xs text-gray-600" data-i18n="heroCollected">Encaissements (mois)</p>
                 <p class="mt-2 text-xl font-semibold">MUR 128,400</p>
-                <p class="mt-1 text-xs text-gray-500">+12% vs. mes pasado</p>
+                <p class="mt-1 text-xs text-gray-500" data-i18n="heroCollectedSub">+12% vs. mois dernier</p>
               </div>
               <div class="rounded-2xl border border-gray-200 p-4">
-                <p class="text-xs text-gray-600">Pendiente</p>
+                <p class="text-xs text-gray-600" data-i18n="heroPending">En attente</p>
                 <p class="mt-2 text-xl font-semibold">MUR 19,250</p>
-                <p class="mt-1 text-xs text-gray-500">8 facturas</p>
+                <p class="mt-1 text-xs text-gray-500" data-i18n="heroPendingSub">8 factures</p>
               </div>
               <div class="rounded-2xl border border-gray-200 p-4">
-                <p class="text-xs text-gray-600">Automatizaciones</p>
-                <p class="mt-2 text-xl font-semibold">Activas</p>
-                <p class="mt-1 text-xs text-gray-500">Recordatorios + impuestos</p>
+                <p class="text-xs text-gray-600" data-i18n="heroAutomation">Automatisations</p>
+                <p class="mt-2 text-xl font-semibold" data-i18n="heroAutomationStatus">Actives</p>
+                <p class="mt-1 text-xs text-gray-500" data-i18n="heroAutomationSub">Rappels + taxes</p>
               </div>
             </div>
 
             <div class="mt-6 rounded-2xl bg-gray-50 border border-gray-200 p-4">
               <div class="flex items-center justify-between">
-                <p class="text-sm font-semibold">Factura #000245</p>
-                <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Enviada</span>
+                <p class="text-sm font-semibold" data-i18n="heroInvoice">Facture #000245</p>
+                <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700" data-i18n="heroInvoiceStatus">Envoyée</span>
               </div>
               <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
                 <div class="rounded-xl bg-white border border-gray-200 p-3">
-                  <p class="text-xs text-gray-500">Cliente</p>
+                  <p class="text-xs text-gray-500" data-i18n="heroClient">Client</p>
                   <p class="mt-1 font-medium">Ocean Trading Ltd.</p>
                 </div>
                 <div class="rounded-xl bg-white border border-gray-200 p-3">
-                  <p class="text-xs text-gray-500">Total</p>
+                  <p class="text-xs text-gray-500" data-i18n="heroTotal">Total</p>
                   <p class="mt-1 font-medium">MUR 6,450</p>
                 </div>
               </div>
               <div class="mt-3 flex flex-wrap gap-2">
                 <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">PDF</span>
-                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Link de pago</span>
-                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Recordatorio</span>
-                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Estado</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700" data-i18n="heroLink">Lien de paiement</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700" data-i18n="heroReminder">Rappel</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700" data-i18n="heroStatus">Statut</span>
               </div>
             </div>
 
@@ -196,8 +198,8 @@
             </div>
           </div>
 
-          <p class="mt-4 text-xs text-gray-500">
-            * Vista demo. Puedes adaptar impuestos, plantillas y campos según tu negocio.
+          <p class="mt-4 text-xs text-gray-500" data-i18n="heroFootnote">
+            * Vue démo. Vous pouvez adapter taxes, modèles et champs selon votre activité.
           </p>
         </div>
       </div>
@@ -207,14 +209,14 @@
   <!-- Logos -->
   <section class="border-y border-gray-100 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <p class="text-sm text-gray-500 text-center">Usado por equipos que quieren orden, control y velocidad</p>
+      <p class="text-sm text-gray-500 text-center" data-i18n="logoTitle">Utilisé par des équipes qui veulent de l'ordre, du contrôle et de la vitesse</p>
       <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 opacity-80">
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Hotel</div>
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Agencia</div>
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Comercio</div>
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Freelance</div>
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">PYME</div>
-        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Servicios</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoHotel">Hôtel</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoAgency">Agence</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoRetail">Commerce</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoFreelance">Freelance</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoSMB">PME</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600" data-i18n="logoServices">Services</div>
       </div>
     </div>
   </section>
@@ -223,49 +225,49 @@
   <section id="features" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="max-w-2xl">
-        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Todo lo esencial, sin ruido</h2>
-        <p class="mt-4 text-gray-600">
-          Pensado para que emitas, envíes y cobres. Con automatizaciones que te ahorran horas cada semana.
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="featuresTitle">Tout l'essentiel, sans bruit</h2>
+        <p class="mt-4 text-gray-600" data-i18n="featuresSub">
+          Pensé pour émettre, envoyer et encaisser. Avec des automatisations qui vous font gagner des heures chaque semaine.
         </p>
       </div>
 
       <div class="mt-10 grid lg:grid-cols-3 gap-6">
         <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
           <div class="w-11 h-11 rounded-2xl bg-black text-white grid place-items-center">1</div>
-          <h3 class="mt-5 font-semibold text-lg">Facturas en segundos</h3>
-          <p class="mt-2 text-gray-600 text-sm">
-            Plantillas limpias, numeración automática, clientes guardados y productos frecuentes.
+          <h3 class="mt-5 font-semibold text-lg" data-i18n="feature1Title">Factures en secondes</h3>
+          <p class="mt-2 text-gray-600 text-sm" data-i18n="feature1Sub">
+            Modèles épurés, numérotation automatique, clients enregistrés et produits fréquents.
           </p>
           <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>PDF profesional</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Monedas e impuestos</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Notas y términos</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature1Item1">PDF professionnel</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature1Item2">Devises et taxes</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature1Item3">Notes et conditions</span></li>
           </ul>
         </div>
 
         <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
           <div class="w-11 h-11 rounded-2xl bg-gray-900 text-white grid place-items-center">2</div>
-          <h3 class="mt-5 font-semibold text-lg">Cobros y seguimiento</h3>
-          <p class="mt-2 text-gray-600 text-sm">
-            Controla estados (borrador, enviada, pagada, vencida) y evita olvidos.
+          <h3 class="mt-5 font-semibold text-lg" data-i18n="feature2Title">Encaissements et suivi</h3>
+          <p class="mt-2 text-gray-600 text-sm" data-i18n="feature2Sub">
+            Contrôlez les statuts (brouillon, envoyée, payée, échue) et évitez les oublis.
           </p>
           <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Recordatorios automáticos</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Historial por cliente</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Reportes claros</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature2Item1">Rappels automatiques</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature2Item2">Historique par client</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature2Item3">Rapports clairs</span></li>
           </ul>
         </div>
 
         <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
           <div class="w-11 h-11 rounded-2xl bg-gray-800 text-white grid place-items-center">3</div>
-          <h3 class="mt-5 font-semibold text-lg">Equipo y permisos</h3>
-          <p class="mt-2 text-gray-600 text-sm">
-            Invita usuarios, define roles y mantén orden en la operación.
+          <h3 class="mt-5 font-semibold text-lg" data-i18n="feature3Title">Équipe et permissions</h3>
+          <p class="mt-2 text-gray-600 text-sm" data-i18n="feature3Sub">
+            Invitez des utilisateurs, définissez des rôles et gardez de l'ordre dans l'opération.
           </p>
           <ul class="mt-4 space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Roles por área</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Registro de actividad</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Acceso seguro</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature3Item1">Rôles par équipe</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature3Item2">Journal d'activité</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="feature3Item3">Accès sécurisé</span></li>
           </ul>
         </div>
       </div>
@@ -277,19 +279,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-6">
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Enfócate en tu negocio.
-            <span class="text-white/70">Nosotros en la factura.</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n-html="true" data-i18n="focusTitle">
+            Concentrez-vous sur votre entreprise. <span class="text-white/70">Nous nous occupons de la facture.</span>
           </h2>
-          <p class="mt-4 text-white/70 max-w-xl">
-            Flujo simple: creas → envías → cobras. Y si el cliente se atrasa, Facture.mu te ayuda a recordarle.
+          <p class="mt-4 text-white/70 max-w-xl" data-i18n="focusSub">
+            Parcours simple : créer → envoyer → encaisser. Et si le client tarde, Facture.mu vous aide à le relancer.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100">
-              Empezar ahora
+            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100" data-i18n="focusPrimary">
+              Commencer maintenant
             </a>
-            <a href="#how" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5">
-              Ver cómo funciona
+            <a href="#how" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5" data-i18n="focusSecondary">
+              Voir comment ça marche
             </a>
           </div>
         </div>
@@ -297,34 +298,34 @@
         <div class="lg:col-span-6">
           <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
             <div class="flex items-center justify-between">
-              <p class="font-semibold">Checklist rápido</p>
-              <span class="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10">3 pasos</span>
+              <p class="font-semibold" data-i18n="checklistTitle">Checklist rapide</p>
+              <span class="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10" data-i18n="checklistSteps">3 étapes</span>
             </div>
             <div class="mt-5 space-y-3 text-sm">
               <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
                 <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
                 <div>
-                  <p class="font-medium">Datos del cliente</p>
-                  <p class="text-white/70">Autocompletado y validación de campos.</p>
+                  <p class="font-medium" data-i18n="checklistItem1Title">Données client</p>
+                  <p class="text-white/70" data-i18n="checklistItem1Sub">Auto-complétion et validation des champs.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
                 <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
                 <div>
-                  <p class="font-medium">Ítems e impuestos</p>
-                  <p class="text-white/70">Cálculo automático, sin fórmulas.</p>
+                  <p class="font-medium" data-i18n="checklistItem2Title">Articles et taxes</p>
+                  <p class="text-white/70" data-i18n="checklistItem2Sub">Calcul automatique, sans formules.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
                 <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
                 <div>
-                  <p class="font-medium">Envío y control</p>
-                  <p class="text-white/70">PDF + estado + recordatorios.</p>
+                  <p class="font-medium" data-i18n="checklistItem3Title">Envoi et suivi</p>
+                  <p class="text-white/70" data-i18n="checklistItem3Sub">PDF + statut + rappels.</p>
                 </div>
               </div>
             </div>
           </div>
-          <p class="mt-4 text-xs text-white/60">Diseño minimalista, inspirado en productos financieros premium.</p>
+          <p class="mt-4 text-xs text-white/60" data-i18n="focusNote">Design minimaliste, inspiré de produits financiers premium.</p>
         </div>
       </div>
     </div>
@@ -337,35 +338,35 @@
         <div class="lg:col-span-6">
           <div class="rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-soft2">
             <div class="flex items-center justify-between">
-              <p class="font-semibold">Vista previa de factura</p>
+              <p class="font-semibold" data-i18n="previewTitle">Aperçu de facture</p>
               <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700">PDF</span>
             </div>
 
             <div class="mt-5 rounded-2xl bg-white border border-gray-200 p-5">
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <p class="text-xs text-gray-500">Emitida por</p>
+                  <p class="text-xs text-gray-500" data-i18n="issuedBy">Émis par</p>
                   <p class="font-semibold">Facture.mu Demo Ltd</p>
                   <p class="text-xs text-gray-500 mt-1">Port Louis, MU</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-xs text-gray-500">Factura</p>
+                  <p class="text-xs text-gray-500" data-i18n="invoiceLabel">Facture</p>
                   <p class="font-semibold">#000245</p>
-                  <p class="text-xs text-gray-500 mt-1">Vence: 15 días</p>
+                  <p class="text-xs text-gray-500 mt-1" data-i18n="due">Échéance : 15 jours</p>
                 </div>
               </div>
 
               <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-gray-600">
                 <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
-                  <p class="text-gray-500">Subtotal</p>
+                  <p class="text-gray-500" data-i18n="subtotal">Sous-total</p>
                   <p class="mt-1 font-semibold text-gray-900">MUR 5,800</p>
                 </div>
                 <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
-                  <p class="text-gray-500">Impuestos</p>
+                  <p class="text-gray-500" data-i18n="taxes">Taxes</p>
                   <p class="mt-1 font-semibold text-gray-900">MUR 650</p>
                 </div>
                 <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
-                  <p class="text-gray-500">Total</p>
+                  <p class="text-gray-500" data-i18n="total">Total</p>
                   <p class="mt-1 font-semibold text-gray-900">MUR 6,450</p>
                 </div>
               </div>
@@ -373,47 +374,47 @@
               <div class="mt-4 h-2 rounded-full bg-gray-100 overflow-hidden">
                 <div class="h-full w-2/3 bg-gray-900"></div>
               </div>
-              <p class="mt-2 text-xs text-gray-500">Estado: Enviada · Seguimiento activado</p>
+              <p class="mt-2 text-xs text-gray-500" data-i18n="status">Statut : Envoyée · Suivi activé</p>
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-6">
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Listo para facturar en minutos</h2>
-          <p class="mt-4 text-gray-600 max-w-xl">
-            Configuras tu empresa una vez, eliges tu plantilla y empiezas. Sin menús eternos. Sin pantallas confusas.
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="howTitle">Prêt à facturer en quelques minutes</h2>
+          <p class="mt-4 text-gray-600 max-w-xl" data-i18n="howSub">
+            Paramétrez votre entreprise une fois, choisissez votre modèle et commencez. Sans menus interminables. Sans écrans confus.
           </p>
 
           <div class="mt-8 space-y-5">
             <div class="flex gap-4">
               <div class="w-10 h-10 rounded-2xl bg-black text-white grid place-items-center font-semibold">A</div>
               <div>
-                <p class="font-semibold">Configura tu negocio</p>
-                <p class="text-sm text-gray-600">Logo, numeración, impuestos, moneda y datos legales.</p>
+                <p class="font-semibold" data-i18n="howStep1Title">Configurez votre activité</p>
+                <p class="text-sm text-gray-600" data-i18n="howStep1Sub">Logo, numérotation, taxes, devise et données légales.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <div class="w-10 h-10 rounded-2xl bg-gray-900 text-white grid place-items-center font-semibold">B</div>
               <div>
-                <p class="font-semibold">Crea y envía</p>
-                <p class="text-sm text-gray-600">PDF + email, con mensajes claros y profesionalismo.</p>
+                <p class="font-semibold" data-i18n="howStep2Title">Créez et envoyez</p>
+                <p class="text-sm text-gray-600" data-i18n="howStep2Sub">PDF + email, avec messages clairs et professionnels.</p>
               </div>
             </div>
             <div class="flex gap-4">
               <div class="w-10 h-10 rounded-2xl bg-gray-800 text-white grid place-items-center font-semibold">C</div>
               <div>
-                <p class="font-semibold">Cobra y controla</p>
-                <p class="text-sm text-gray-600">Estados, vencimientos y reportes simples para decidir rápido.</p>
+                <p class="font-semibold" data-i18n="howStep3Title">Encaissez et contrôlez</p>
+                <p class="text-sm text-gray-600" data-i18n="howStep3Sub">Statuts, échéances et rapports simples pour décider vite.</p>
               </div>
             </div>
           </div>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft">
-              Crear cuenta
+            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft" data-i18n="howPrimary">
+              Créer un compte
             </a>
-            <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
-              Ver precios
+            <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50" data-i18n="howSecondary">
+              Voir les tarifs
             </a>
           </div>
         </div>
@@ -426,27 +427,27 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid lg:grid-cols-12 gap-10 items-start">
         <div class="lg:col-span-5">
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Seguridad y control</h2>
-          <p class="mt-4 text-gray-600">
-            Diseñado con mentalidad “fintech”: acceso seguro, permisos por rol y trazabilidad.
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="securityTitle">Sécurité et contrôle</h2>
+          <p class="mt-4 text-gray-600" data-i18n="securitySub">
+            Conçu avec une mentalité « fintech » : accès sécurisé, permissions par rôle et traçabilité.
           </p>
         </div>
         <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
           <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-            <p class="font-semibold">Acceso por roles</p>
-            <p class="mt-2 text-sm text-gray-600">Define quién crea, quién aprueba y quién ve reportes.</p>
+            <p class="font-semibold" data-i18n="securityItem1Title">Accès par rôles</p>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="securityItem1Sub">Définissez qui crée, qui approuve et qui voit les rapports.</p>
           </div>
           <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-            <p class="font-semibold">Historial de cambios</p>
-            <p class="mt-2 text-sm text-gray-600">Registro de acciones clave para trabajar con tranquilidad.</p>
+            <p class="font-semibold" data-i18n="securityItem2Title">Historique des changements</p>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="securityItem2Sub">Journal des actions clés pour travailler sereinement.</p>
           </div>
           <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-            <p class="font-semibold">Backups y exportación</p>
-            <p class="mt-2 text-sm text-gray-600">Exporta clientes, facturas y reportes cuando lo necesites.</p>
+            <p class="font-semibold" data-i18n="securityItem3Title">Sauvegardes et export</p>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="securityItem3Sub">Exportez clients, factures et rapports quand vous voulez.</p>
           </div>
           <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-            <p class="font-semibold">Privacidad primero</p>
-            <p class="mt-2 text-sm text-gray-600">Tus datos se usan solo para operar el servicio.</p>
+            <p class="font-semibold" data-i18n="securityItem4Title">Confidentialité d'abord</p>
+            <p class="mt-2 text-sm text-gray-600" data-i18n="securityItem4Sub">Vos données sont utilisées uniquement pour opérer le service.</p>
           </div>
         </div>
       </div>
@@ -458,98 +459,93 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <div class="max-w-2xl">
-          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Precios simples</h2>
-          <p class="mt-4 text-gray-600">
-            Empieza gratis y sube de plan cuando lo necesites. Sin letra chica.
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="pricingTitle">Tarifs simples</h2>
+          <p class="mt-4 text-gray-600" data-i18n="pricingSub">
+            Commencez gratuitement et passez de plan quand vous en avez besoin. Sans petites lignes.
           </p>
         </div>
-        <div class="text-sm text-gray-600">
-          ¿Necesitas plan empresa? <a href="#cta" class="text-gray-900 underline underline-offset-4">Hablemos</a>
+        <div class="text-sm text-gray-600" data-i18n-html="true" data-i18n="pricingContact">
+          Besoin d'un plan entreprise ? <a href="#cta" class="text-gray-900 underline underline-offset-4">Discutons</a>
         </div>
       </div>
 
       <div class="mt-10 grid lg:grid-cols-3 gap-6">
         <!-- Free -->
         <div class="rounded-3xl border border-gray-200 p-7 shadow-soft2">
-          <p class="text-sm text-gray-600">Starter</p>
-          <p class="mt-2 text-3xl font-semibold">Gratis</p>
-          <p class="mt-2 text-sm text-gray-600">Para probar el flujo completo.</p>
+          <p class="text-sm text-gray-600" data-i18n="pricingFree">Starter</p>
+          <p class="mt-2 text-3xl font-semibold" data-i18n="pricingFreePrice">Gratuit</p>
+          <p class="mt-2 text-sm text-gray-600" data-i18n="pricingFreeSub">Pour tester tout le parcours.</p>
           <ul class="mt-6 space-y-3 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Plantilla básica</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Clientes ilimitados</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Exportación básica</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingFreeItem1">Modèle basique</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingFreeItem2">Clients illimités</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingFreeItem3">Exportation basique</span></li>
           </ul>
-          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
-            Empezar
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50" data-i18n="pricingFreeCta">
+            Commencer
           </a>
         </div>
 
         <!-- Pro (highlight) -->
         <div class="rounded-3xl border border-gray-900 p-7 shadow-soft bg-white relative">
-          <span class="absolute -top-3 left-7 text-xs px-3 py-1 rounded-full bg-black text-white">Recomendado</span>
-          <p class="text-sm text-gray-600">Pro</p>
-          <p class="mt-2 text-3xl font-semibold">MUR 490<span class="text-base font-medium text-gray-500">/mes</span></p>
-          <p class="mt-2 text-sm text-gray-600">Para autónomos y pymes.</p>
+          <span class="absolute -top-3 left-7 text-xs px-3 py-1 rounded-full bg-black text-white" data-i18n="pricingProBadge">Recommandé</span>
+          <p class="text-sm text-gray-600" data-i18n="pricingPro">Pro</p>
+          <p class="mt-2 text-3xl font-semibold" data-i18n-html="true" data-i18n="pricingProPrice">MUR 490<span class="text-base font-medium text-gray-500">/mois</span></p>
+          <p class="mt-2 text-sm text-gray-600" data-i18n="pricingProSub">Pour indépendants et PME.</p>
           <ul class="mt-6 space-y-3 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Plantillas premium</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Recordatorios automáticos</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Estados y reportes</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingProItem1">Modèles premium</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingProItem2">Rappels automatiques</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingProItem3">Statuts et rapports</span></li>
           </ul>
-          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900">
-            Probar Pro
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900" data-i18n="pricingProCta">
+            Essayer Pro
           </a>
         </div>
 
         <!-- Team -->
         <div class="rounded-3xl border border-gray-200 p-7 shadow-soft2">
-          <p class="text-sm text-gray-600">Team</p>
-          <p class="mt-2 text-3xl font-semibold">MUR 990<span class="text-base font-medium text-gray-500">/mes</span></p>
-          <p class="mt-2 text-sm text-gray-600">Para equipos con permisos y control.</p>
+          <p class="text-sm text-gray-600" data-i18n="pricingTeam">Team</p>
+          <p class="mt-2 text-3xl font-semibold" data-i18n-html="true" data-i18n="pricingTeamPrice">MUR 990<span class="text-base font-medium text-gray-500">/mois</span></p>
+          <p class="mt-2 text-sm text-gray-600" data-i18n="pricingTeamSub">Pour les équipes avec permissions et contrôle.</p>
           <ul class="mt-6 space-y-3 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Usuarios y roles</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Registro de actividad</li>
-            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Soporte prioritario</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingTeamItem1">Utilisateurs et rôles</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingTeamItem2">Journal d'activité</span></li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span><span data-i18n="pricingTeamItem3">Support prioritaire</span></li>
           </ul>
-          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
-            Hablar con ventas
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50" data-i18n="pricingTeamCta">
+            Parler avec les ventes
           </a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section id="cta" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-      <div class="rounded-[2rem] bg-gray-950 text-white p-8 sm:p-10 lg:p-12 shadow-soft overflow-hidden relative">
+      <div class="mt-14 relative overflow-hidden rounded-3xl bg-gray-950 text-white p-10 border border-white/10">
         <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
         <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
 
         <div class="relative grid lg:grid-cols-12 gap-10 items-center">
           <div class="lg:col-span-7">
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-              Prueba Facture.mu hoy.
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="ctaTitle">
+              Essayez Facture.mu dès aujourd'hui.
             </h2>
-            <p class="mt-4 text-white/70 max-w-xl">
-              Empieza con una cuenta gratuita y emite tus primeras facturas en minutos.
-              Si quieres, migramos tus datos desde Excel.
+            <p class="mt-4 text-white/70 max-w-xl" data-i18n="ctaSub">
+              Commencez avec un compte gratuit et émettez vos premières factures en quelques minutes. Si vous le souhaitez, nous migrons vos données depuis Excel.
             </p>
           </div>
 
           <div class="lg:col-span-5">
             <form class="rounded-3xl bg-white/5 border border-white/10 p-6">
-              <label class="block text-sm font-medium">Email</label>
+              <label class="block text-sm font-medium" data-i18n="ctaEmailLabel">Email</label>
               <input
                 type="email"
-                placeholder="tu@empresa.com"
+                placeholder="votre@entreprise.com"
                 class="mt-2 w-full px-4 py-3 rounded-2xl bg-white text-gray-900 placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-white/40"
+                data-i18n-placeholder="ctaEmailPlaceholder"
               />
               <button type="button"
-                class="mt-4 w-full inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100">
-                Crear cuenta gratis
+                class="mt-4 w-full inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100" data-i18n="ctaButton">
+                Créer un compte gratuit
               </button>
-              <p class="mt-3 text-xs text-white/60">
-                Sin tarjeta. Puedes cancelar cuando quieras.
+              <p class="mt-3 text-xs text-white/60" data-i18n="ctaNote">
+                Sans carte. Vous pouvez annuler quand vous voulez.
               </p>
             </form>
           </div>
@@ -561,23 +557,23 @@
   <!-- FAQ -->
   <section id="faq" class="bg-gray-50 border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Preguntas frecuentes</h2>
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight" data-i18n="faqTitle">Questions fréquentes</h2>
       <div class="mt-10 grid lg:grid-cols-2 gap-6">
         <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-          <summary class="cursor-pointer font-semibold">¿Puedo usar mi logo y mis colores?</summary>
-          <p class="mt-3 text-sm text-gray-600">Sí. Puedes personalizar plantilla, datos legales, numeración y estilo.</p>
+          <summary class="cursor-pointer font-semibold" data-i18n="faq1Q">Puis-je utiliser mon logo et mes couleurs ?</summary>
+          <p class="mt-3 text-sm text-gray-600" data-i18n="faq1A">Oui. Vous pouvez personnaliser modèle, données légales, numérotation et style.</p>
         </details>
         <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-          <summary class="cursor-pointer font-semibold">¿Sirve para equipos?</summary>
-          <p class="mt-3 text-sm text-gray-600">Sí. Con el plan Team puedes agregar usuarios, roles y control de actividad.</p>
+          <summary class="cursor-pointer font-semibold" data-i18n="faq2Q">Est-ce adapté aux équipes ?</summary>
+          <p class="mt-3 text-sm text-gray-600" data-i18n="faq2A">Oui. Avec le plan Team, vous pouvez ajouter des utilisateurs, des rôles et un contrôle d'activité.</p>
         </details>
         <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-          <summary class="cursor-pointer font-semibold">¿Puedo exportar mis datos?</summary>
-          <p class="mt-3 text-sm text-gray-600">Sí. Exporta facturas, clientes y reportes para contabilidad o respaldo.</p>
+          <summary class="cursor-pointer font-semibold" data-i18n="faq3Q">Puis-je exporter mes données ?</summary>
+          <p class="mt-3 text-sm text-gray-600" data-i18n="faq3A">Oui. Exportez factures, clients et rapports pour la comptabilité ou la sauvegarde.</p>
         </details>
         <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
-          <summary class="cursor-pointer font-semibold">¿Hay soporte?</summary>
-          <p class="mt-3 text-sm text-gray-600">Incluido. Y soporte prioritario en Team.</p>
+          <summary class="cursor-pointer font-semibold" data-i18n="faq4Q">Y a-t-il du support ?</summary>
+          <p class="mt-3 text-sm text-gray-600" data-i18n="faq4A">Inclus. Et support prioritaire dans Team.</p>
         </details>
       </div>
     </div>
@@ -594,53 +590,589 @@
             </span>
             <span class="font-semibold">Facture.mu</span>
           </div>
-          <p class="mt-4 text-sm text-gray-600 max-w-sm">
-            Facturación electrónica minimalista: rápida, limpia y con control real.
+          <p class="mt-4 text-sm text-gray-600 max-w-sm" data-i18n="footerTagline">
+            Facturation électronique minimaliste : rapide, épurée et avec un vrai contrôle.
           </p>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
           <div>
-            <p class="font-semibold">Producto</p>
+            <p class="font-semibold" data-i18n="footerProduct">Produit</p>
             <ul class="mt-3 space-y-2 text-gray-600">
-              <li><a class="hover:text-black" href="#features">Funciones</a></li>
-              <li><a class="hover:text-black" href="#how">Cómo funciona</a></li>
-              <li><a class="hover:text-black" href="#pricing">Precios</a></li>
+              <li><a class="hover:text-black" href="#features" data-i18n="footerFeatures">Fonctionnalités</a></li>
+              <li><a class="hover:text-black" href="#how" data-i18n="footerHow">Comment ça marche</a></li>
+              <li><a class="hover:text-black" href="#pricing" data-i18n="footerPricing">Tarifs</a></li>
             </ul>
           </div>
           <div>
-            <p class="font-semibold">Compañía</p>
+            <p class="font-semibold" data-i18n="footerCompany">Société</p>
             <ul class="mt-3 space-y-2 text-gray-600">
-              <li><a class="hover:text-black" href="#">Contacto</a></li>
-              <li><a class="hover:text-black" href="#">Términos</a></li>
-              <li><a class="hover:text-black" href="#">Privacidad</a></li>
+              <li><a class="hover:text-black" href="#" data-i18n="footerContact">Contact</a></li>
+              <li><a class="hover:text-black" href="#" data-i18n="footerTerms">Conditions</a></li>
+              <li><a class="hover:text-black" href="#" data-i18n="footerPrivacy">Confidentialité</a></li>
             </ul>
           </div>
           <div>
-            <p class="font-semibold">Soporte</p>
+            <p class="font-semibold" data-i18n="footerSupport">Support</p>
             <ul class="mt-3 space-y-2 text-gray-600">
-              <li><a class="hover:text-black" href="#faq">FAQ</a></li>
-              <li><a class="hover:text-black" href="#">Centro de ayuda</a></li>
-              <li><a class="hover:text-black" href="#">Estado del sistema</a></li>
+              <li><a class="hover:text-black" href="#faq" data-i18n="footerFaq">FAQ</a></li>
+              <li><a class="hover:text-black" href="#" data-i18n="footerHelpCenter">Centre d'aide</a></li>
+              <li><a class="hover:text-black" href="#" data-i18n="footerStatus">État du système</a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <p class="text-xs text-gray-500">© <span id="y"></span> Facture.mu. Todos los derechos reservados.</p>
+        <p class="text-xs text-gray-500" data-i18n-html="true" data-i18n="footerCopy">© <span id="y"></span> Facture.mu. Tous les droits réservés.</p>
         <div class="flex items-center gap-3 text-xs text-gray-600">
-          <a class="hover:text-black" href="#">Privacidad</a>
+          <a class="hover:text-black" href="#" data-i18n="footerPrivacyLink">Confidentialité</a>
           <span class="text-gray-300">•</span>
-          <a class="hover:text-black" href="#">Términos</a>
+          <a class="hover:text-black" href="#" data-i18n="footerTermsLink">Conditions</a>
           <span class="text-gray-300">•</span>
-          <a class="hover:text-black" href="#">Cookies</a>
+          <a class="hover:text-black" href="#" data-i18n="footerCookies">Cookies</a>
         </div>
       </div>
     </div>
 
     <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
+      const translations = {
+        fr: {
+          title: "Facture.mu – Facturation électronique simple",
+          metaDescription: "Créez des factures professionnelles, automatisez les taxes et contrôlez vos encaissements en temps réel avec Facture.mu. Design minimaliste, rapide et sécurisé.",
+          langFrench: "Français (FR)",
+          langEnglish: "English (EN)",
+          langCreole: "Kreol Morisien",
+          topNotice: "Facture.mu • Facturation électronique moderne pour l'île Maurice",
+          topNoticeLink: "Voir les plans",
+          navFeatures: "Fonctionnalités",
+          navHow: "Comment ça marche",
+          navSecurity: "Sécurité",
+          navFaq: "FAQ",
+          login: "Se connecter",
+          ctaCreate: "Créer un compte",
+          heroTag: "Facturation électronique sans friction",
+          heroHeading: "Facturez facilement et sans erreurs avec <span class=\"text-gray-500\">Facture.mu</span>",
+          heroSub: "Créez des factures professionnelles, automatisez les calculs, gérez vos clients et contrôlez vos encaissements en temps réel. Minimaliste, rapide et fait pour travailler sérieusement.",
+          heroPrimary: "Essayer gratuitement",
+          heroSecondary: "Voir les fonctionnalités",
+          heroStat: "<span class=\"font-semibold text-gray-900\">95%<\/span> des utilisateurs disent « plus rapide que mon Excel ».",
+          heroPanel: "Tableau de bord",
+          heroPanelTitle: "Résumé de facturation",
+          heroRealtime: "<span class=\"w-2 h-2 rounded-full bg-gray-900\"></span> En temps réel",
+          heroCollected: "Encaissements (mois)",
+          heroCollectedSub: "+12% vs. mois dernier",
+          heroPending: "En attente",
+          heroPendingSub: "8 factures",
+          heroAutomation: "Automatisations",
+          heroAutomationStatus: "Actives",
+          heroAutomationSub: "Rappels + taxes",
+          heroInvoice: "Facture #000245",
+          heroInvoiceStatus: "Envoyée",
+          heroClient: "Client",
+          heroTotal: "Total",
+          heroLink: "Lien de paiement",
+          heroReminder: "Rappel",
+          heroStatus: "Statut",
+          heroFootnote: "* Vue démo. Vous pouvez adapter taxes, modèles et champs selon votre activité.",
+          logoTitle: "Utilisé par des équipes qui veulent de l'ordre, du contrôle et de la vitesse",
+          logoHotel: "Hôtel",
+          logoAgency: "Agence",
+          logoRetail: "Commerce",
+          logoFreelance: "Freelance",
+          logoSMB: "PME",
+          logoServices: "Services",
+          featuresTitle: "Tout l'essentiel, sans bruit",
+          featuresSub: "Pensé pour émettre, envoyer et encaisser. Avec des automatisations qui vous font gagner des heures chaque semaine.",
+          feature1Title: "Factures en secondes",
+          feature1Sub: "Modèles épurés, numérotation automatique, clients enregistrés et produits fréquents.",
+          feature1Item1: "PDF professionnel",
+          feature1Item2: "Devises et taxes",
+          feature1Item3: "Notes et conditions",
+          feature2Title: "Encaissements et suivi",
+          feature2Sub: "Contrôlez les statuts (brouillon, envoyée, payée, échue) et évitez les oublis.",
+          feature2Item1: "Rappels automatiques",
+          feature2Item2: "Historique par client",
+          feature2Item3: "Rapports clairs",
+          feature3Title: "Équipe et permissions",
+          feature3Sub: "Invitez des utilisateurs, définissez des rôles et gardez de l'ordre dans l'opération.",
+          feature3Item1: "Rôles par équipe",
+          feature3Item2: "Journal d'activité",
+          feature3Item3: "Accès sécurisé",
+          focusTitle: "Concentrez-vous sur votre entreprise. <span class=\"text-white/70\">Nous nous occupons de la facture.<\/span>",
+          focusSub: "Parcours simple : créer → envoyer → encaisser. Et si le client tarde, Facture.mu vous aide à le relancer.",
+          focusPrimary: "Commencer maintenant",
+          focusSecondary: "Voir comment ça marche",
+          checklistTitle: "Checklist rapide",
+          checklistSteps: "3 étapes",
+          checklistItem1Title: "Données client",
+          checklistItem1Sub: "Auto-complétion et validation des champs.",
+          checklistItem2Title: "Articles et taxes",
+          checklistItem2Sub: "Calcul automatique, sans formules.",
+          checklistItem3Title: "Envoi et suivi",
+          checklistItem3Sub: "PDF + statut + rappels.",
+          focusNote: "Design minimaliste, inspiré de produits financiers premium.",
+          previewTitle: "Aperçu de facture",
+          issuedBy: "Émis par",
+          invoiceLabel: "Facture",
+          due: "Échéance : 15 jours",
+          subtotal: "Sous-total",
+          taxes: "Taxes",
+          total: "Total",
+          status: "Statut : Envoyée · Suivi activé",
+          howTitle: "Prêt à facturer en quelques minutes",
+          howSub: "Paramétrez votre entreprise une fois, choisissez votre modèle et commencez. Sans menus interminables. Sans écrans confus.",
+          howStep1Title: "Configurez votre activité",
+          howStep1Sub: "Logo, numérotation, taxes, devise et données légales.",
+          howStep2Title: "Créez et envoyez",
+          howStep2Sub: "PDF + email, avec messages clairs et professionnels.",
+          howStep3Title: "Encaissez et contrôlez",
+          howStep3Sub: "Statuts, échéances et rapports simples pour décider vite.",
+          howPrimary: "Créer un compte",
+          howSecondary: "Voir les tarifs",
+          securityTitle: "Sécurité et contrôle",
+          securitySub: "Conçu avec une mentalité « fintech » : accès sécurisé, permissions par rôle et traçabilité.",
+          securityItem1Title: "Accès par rôles",
+          securityItem1Sub: "Définissez qui crée, qui approuve et qui voit les rapports.",
+          securityItem2Title: "Historique des changements",
+          securityItem2Sub: "Journal des actions clés pour travailler sereinement.",
+          securityItem3Title: "Sauvegardes et export",
+          securityItem3Sub: "Exportez clients, factures et rapports quand vous voulez.",
+          securityItem4Title: "Confidentialité d'abord",
+          securityItem4Sub: "Vos données sont utilisées uniquement pour opérer le service.",
+          pricingTitle: "Tarifs simples",
+          pricingSub: "Commencez gratuitement et passez de plan quand vous en avez besoin. Sans petites lignes.",
+          pricingContact: "Besoin d'un plan entreprise ? <a href=\"#cta\" class=\"text-gray-900 underline underline-offset-4\">Discutons</a>",
+          pricingFree: "Starter",
+          pricingFreePrice: "Gratuit",
+          pricingFreeSub: "Pour tester tout le parcours.",
+          pricingFreeItem1: "Modèle basique",
+          pricingFreeItem2: "Clients illimités",
+          pricingFreeItem3: "Exportation basique",
+          pricingFreeCta: "Commencer",
+          pricingProBadge: "Recommandé",
+          pricingPro: "Pro",
+          pricingProPrice: "MUR 490<span class=\"text-base font-medium text-gray-500\">/mois</span>",
+          pricingProSub: "Pour indépendants et PME.",
+          pricingProItem1: "Modèles premium",
+          pricingProItem2: "Rappels automatiques",
+          pricingProItem3: "Statuts et rapports",
+          pricingProCta: "Essayer Pro",
+          pricingTeam: "Team",
+          pricingTeamPrice: "MUR 990<span class=\"text-base font-medium text-gray-500\">/mois</span>",
+          pricingTeamSub: "Pour les équipes avec permissions et contrôle.",
+          pricingTeamItem1: "Utilisateurs et rôles",
+          pricingTeamItem2: "Journal d'activité",
+          pricingTeamItem3: "Support prioritaire",
+          pricingTeamCta: "Parler avec les ventes",
+          ctaTitle: "Essayez Facture.mu dès aujourd'hui.",
+          ctaSub: "Commencez avec un compte gratuit et émettez vos premières factures en quelques minutes. Si vous le souhaitez, nous migrons vos données depuis Excel.",
+          ctaEmailLabel: "Email",
+          ctaEmailPlaceholder: "votre@entreprise.com",
+          ctaButton: "Créer un compte gratuit",
+          ctaNote: "Sans carte. Vous pouvez annuler quand vous voulez.",
+          faqTitle: "Questions fréquentes",
+          faq1Q: "Puis-je utiliser mon logo et mes couleurs ?",
+          faq1A: "Oui. Vous pouvez personnaliser modèle, données légales, numérotation et style.",
+          faq2Q: "Est-ce adapté aux équipes ?",
+          faq2A: "Oui. Avec le plan Team, vous pouvez ajouter des utilisateurs, des rôles et un contrôle d'activité.",
+          faq3Q: "Puis-je exporter mes données ?",
+          faq3A: "Oui. Exportez factures, clients et rapports pour la comptabilité ou la sauvegarde.",
+          faq4Q: "Y a-t-il du support ?",
+          faq4A: "Inclus. Et support prioritaire dans Team.",
+          footerTagline: "Facturation électronique minimaliste : rapide, épurée et avec un vrai contrôle.",
+          footerProduct: "Produit",
+          footerFeatures: "Fonctionnalités",
+          footerHow: "Comment ça marche",
+          footerPricing: "Tarifs",
+          footerCompany: "Société",
+          footerContact: "Contact",
+          footerTerms: "Conditions",
+          footerPrivacy: "Confidentialité",
+          footerSupport: "Support",
+          footerFaq: "FAQ",
+          footerHelpCenter: "Centre d'aide",
+          footerStatus: "État du système",
+          footerCopy: "© <span id=\"y\"></span> Facture.mu. Tous les droits réservés.",
+          footerPrivacyLink: "Confidentialité",
+          footerTermsLink: "Conditions",
+          footerCookies: "Cookies"
+        },
+        en: {
+          title: "Facture.mu – Simple e-invoicing",
+          metaDescription: "Create professional invoices, automate taxes, and control collections in real time with Facture.mu. Minimal, fast, and secure design.",
+          langFrench: "French (FR)",
+          langEnglish: "English (EN)",
+          langCreole: "Mauritian Creole",
+          topNotice: "Facture.mu • Modern e-invoicing for Mauritius",
+          topNoticeLink: "See plans",
+          navFeatures: "Features",
+          navHow: "How it works",
+          navSecurity: "Security",
+          navFaq: "FAQ",
+          login: "Log in",
+          ctaCreate: "Create account",
+          heroTag: "Frictionless e-invoicing",
+          heroHeading: "Invoice easily and without errors with <span class=\"text-gray-500\">Facture.mu</span>",
+          heroSub: "Create professional invoices, automate calculations, manage clients, and control your collections in real time. Minimal, fast, and built for serious work.",
+          heroPrimary: "Try for free",
+          heroSecondary: "View features",
+          heroStat: "<span class=\"font-semibold text-gray-900\">95%<\/span> of users say “faster than my Excel.”",
+          heroPanel: "Dashboard",
+          heroPanelTitle: "Billing summary",
+          heroRealtime: "<span class=\"w-2 h-2 rounded-full bg-gray-900\"></span> Real time",
+          heroCollected: "Collected (month)",
+          heroCollectedSub: "+12% vs. last month",
+          heroPending: "Pending",
+          heroPendingSub: "8 invoices",
+          heroAutomation: "Automations",
+          heroAutomationStatus: "Active",
+          heroAutomationSub: "Reminders + taxes",
+          heroInvoice: "Invoice #000245",
+          heroInvoiceStatus: "Sent",
+          heroClient: "Client",
+          heroTotal: "Total",
+          heroLink: "Payment link",
+          heroReminder: "Reminder",
+          heroStatus: "Status",
+          heroFootnote: "* Demo view. You can adapt taxes, templates, and fields for your business.",
+          logoTitle: "Used by teams that want order, control, and speed",
+          logoHotel: "Hotel",
+          logoAgency: "Agency",
+          logoRetail: "Retail",
+          logoFreelance: "Freelance",
+          logoSMB: "SMB",
+          logoServices: "Services",
+          featuresTitle: "Everything essential, no noise",
+          featuresSub: "Built so you issue, send, and get paid. With automations that save you hours every week.",
+          feature1Title: "Invoices in seconds",
+          feature1Sub: "Clean templates, automatic numbering, saved clients, and frequent items.",
+          feature1Item1: "Professional PDF",
+          feature1Item2: "Currencies and taxes",
+          feature1Item3: "Notes and terms",
+          feature2Title: "Payments and tracking",
+          feature2Sub: "Control statuses (draft, sent, paid, overdue) and avoid forgetting.",
+          feature2Item1: "Automatic reminders",
+          feature2Item2: "History per client",
+          feature2Item3: "Clear reports",
+          feature3Title: "Team and permissions",
+          feature3Sub: "Invite users, set roles, and keep operations tidy.",
+          feature3Item1: "Roles by team",
+          feature3Item2: "Activity log",
+          feature3Item3: "Secure access",
+          focusTitle: "Focus on your business. <span class=\"text-white/70\">We handle the invoice.</span>",
+          focusSub: "Simple flow: create → send → get paid. And if the client delays, Facture.mu helps you remind them.",
+          focusPrimary: "Start now",
+          focusSecondary: "See how it works",
+          checklistTitle: "Quick checklist",
+          checklistSteps: "3 steps",
+          checklistItem1Title: "Client data",
+          checklistItem1Sub: "Autocomplete and field validation.",
+          checklistItem2Title: "Items and taxes",
+          checklistItem2Sub: "Automatic calculation, no formulas.",
+          checklistItem3Title: "Send and track",
+          checklistItem3Sub: "PDF + status + reminders.",
+          focusNote: "Minimalist design, inspired by premium financial products.",
+          previewTitle: "Invoice preview",
+          issuedBy: "Issued by",
+          invoiceLabel: "Invoice",
+          due: "Due: 15 days",
+          subtotal: "Subtotal",
+          taxes: "Taxes",
+          total: "Total",
+          status: "Status: Sent · Tracking on",
+          howTitle: "Ready to invoice in minutes",
+          howSub: "Set up your business once, pick your template, and start. No endless menus. No confusing screens.",
+          howStep1Title: "Set up your business",
+          howStep1Sub: "Logo, numbering, taxes, currency, and legal info.",
+          howStep2Title: "Create and send",
+          howStep2Sub: "PDF + email, with clear and professional messages.",
+          howStep3Title: "Get paid and stay in control",
+          howStep3Sub: "Statuses, due dates, and simple reports to decide quickly.",
+          howPrimary: "Create account",
+          howSecondary: "View pricing",
+          securityTitle: "Security and control",
+          securitySub: "Designed with a fintech mindset: secure access, role permissions, and traceability.",
+          securityItem1Title: "Role-based access",
+          securityItem1Sub: "Define who creates, who approves, and who sees reports.",
+          securityItem2Title: "Change history",
+          securityItem2Sub: "Log of key actions so you work with peace of mind.",
+          securityItem3Title: "Backups and export",
+          securityItem3Sub: "Export clients, invoices, and reports whenever you need.",
+          securityItem4Title: "Privacy first",
+          securityItem4Sub: "Your data is used only to operate the service.",
+          pricingTitle: "Simple pricing",
+          pricingSub: "Start free and move up when you need. No fine print.",
+          pricingContact: "Need an enterprise plan? <a href=\"#cta\" class=\"text-gray-900 underline underline-offset-4\">Let's talk</a>",
+          pricingFree: "Starter",
+          pricingFreePrice: "Free",
+          pricingFreeSub: "To test the full flow.",
+          pricingFreeItem1: "Basic template",
+          pricingFreeItem2: "Unlimited clients",
+          pricingFreeItem3: "Basic export",
+          pricingFreeCta: "Get started",
+          pricingProBadge: "Recommended",
+          pricingPro: "Pro",
+          pricingProPrice: "MUR 490<span class=\"text-base font-medium text-gray-500\">/month</span>",
+          pricingProSub: "For freelancers and small businesses.",
+          pricingProItem1: "Premium templates",
+          pricingProItem2: "Automatic reminders",
+          pricingProItem3: "Statuses and reports",
+          pricingProCta: "Try Pro",
+          pricingTeam: "Team",
+          pricingTeamPrice: "MUR 990<span class=\"text-base font-medium text-gray-500\">/month</span>",
+          pricingTeamSub: "For teams with permissions and control.",
+          pricingTeamItem1: "Users and roles",
+          pricingTeamItem2: "Activity log",
+          pricingTeamItem3: "Priority support",
+          pricingTeamCta: "Talk to sales",
+          ctaTitle: "Try Facture.mu today.",
+          ctaSub: "Start with a free account and issue your first invoices in minutes. If you like, we migrate your data from Excel.",
+          ctaEmailLabel: "Email",
+          ctaEmailPlaceholder: "you@company.com",
+          ctaButton: "Create free account",
+          ctaNote: "No card. Cancel anytime.",
+          faqTitle: "Frequently asked questions",
+          faq1Q: "Can I use my logo and colors?",
+          faq1A: "Yes. You can customize template, legal details, numbering, and style.",
+          faq2Q: "Is it good for teams?",
+          faq2A: "Yes. With the Team plan you can add users, roles, and activity control.",
+          faq3Q: "Can I export my data?",
+          faq3A: "Yes. Export invoices, clients, and reports for accounting or backup.",
+          faq4Q: "Is there support?",
+          faq4A: "Included. And priority support on Team.",
+          footerTagline: "Minimalist e-invoicing: fast, clean, and truly in control.",
+          footerProduct: "Product",
+          footerFeatures: "Features",
+          footerHow: "How it works",
+          footerPricing: "Pricing",
+          footerCompany: "Company",
+          footerContact: "Contact",
+          footerTerms: "Terms",
+          footerPrivacy: "Privacy",
+          footerSupport: "Support",
+          footerFaq: "FAQ",
+          footerHelpCenter: "Help Center",
+          footerStatus: "System status",
+          footerCopy: "© <span id=\"y\"></span> Facture.mu. All rights reserved.",
+          footerPrivacyLink: "Privacy",
+          footerTermsLink: "Terms",
+          footerCookies: "Cookies"
+        },
+        mfe: {
+          title: "Facture.mu – Faktir elektwonik sinp",
+          metaDescription: "Kre faktir profesionnèl, otomatik taks ek kontrol laspes dan letan reyel avek Facture.mu. Design minimalis, vit ek sekirize.",
+          langFrench: "Franse (FR)",
+          langEnglish: "Angle (EN)",
+          langCreole: "Kreol Morisien",
+          topNotice: "Facture.mu • Faktir elektwonik modern pou Moris",
+          topNoticeLink: "Guet plan",
+          navFeatures: "Fonksyonalite",
+          navHow: "Kouma li mars",
+          navSecurity: "Sekirite",
+          navFaq: "FAQ",
+          login: "Konekte",
+          ctaCreate: "Kre enn kont",
+          heroTag: "Faktir elektwonik san friksyon",
+          heroHeading: "Faktire fasil san erer avek <span class=\"text-gray-500\">Facture.mu</span>",
+          heroSub: "Kre faktir profesionnèl, otomatik kalkil, zere kliyan ek kontrol ou laspes an letan reyel. Minimalis, vit ek fer pou travay serye.",
+          heroPrimary: "Esay gratis",
+          heroSecondary: "Guet fonksyonalite",
+          heroStat: "<span class=\"font-semibold text-gray-900\">95%<\/span> itilizater dir “pli vit ki mo Excel.”",
+          heroPanel: "Tablo de bord",
+          heroPanelTitle: "Rezime faktirasyon",
+          heroRealtime: "<span class=\"w-2 h-2 rounded-full bg-gray-900\"></span> An letan reyel",
+          heroCollected: "Kolekte (mwa)",
+          heroCollectedSub: "+12% konpare mwa pase",
+          heroPending: "An atant",
+          heroPendingSub: "8 faktir",
+          heroAutomation: "Otomatizasyon",
+          heroAutomationStatus: "Aktif",
+          heroAutomationSub: "Rapel + taks",
+          heroInvoice: "Faktir #000245",
+          heroInvoiceStatus: "Avoye",
+          heroClient: "Kliyan",
+          heroTotal: "Total",
+          heroLink: "Lyen peman",
+          heroReminder: "Rapel",
+          heroStatus: "Statik",
+          heroFootnote: "* Vizyon demo. Ou kapav adapte taks, model ek chan dapre ou bizness.",
+          logoTitle: "Itilize par lekip ki anvi lord, kontrol ek vitess",
+          logoHotel: "Lotel",
+          logoAgency: "Azians",
+          logoRetail: "Komers",
+          logoFreelance: "Freelans",
+          logoSMB: "PME",
+          logoServices: "Servis",
+          featuresTitle: "Tou seki inportan, san tapaz",
+          featuresSub: "Panse pou fer ou emet, avoye ek ranmas kass. Avek otomatizasyon ki fer ou gagn ler sak semenn.",
+          feature1Title: "Faktir an sekonn",
+          feature1Sub: "Model prop, numerotasyon otomatik, kliyan anrezistre ek prodwi souvan.",
+          feature1Item1: "PDF profesionnèl",
+          feature1Item2: "Lamor larzan ek taks",
+          feature1Item3: "Not ek term",
+          feature2Title: "Kobran ek swivi",
+          feature2Sub: "Kontrol statik (brouyon, avoye, peye, an retar) ek evit bliye.",
+          feature2Item1: "Rapel otomatik",
+          feature2Item2: "Listwar par kliyan",
+          feature2Item3: "Rapor kler",
+          feature3Title: "Lerkip ek permisyon",
+          feature3Sub: "Invite itilizater, defin rol ek gard lord dan operasyon.",
+          feature3Item1: "Rol par lekip",
+          feature3Item2: "Loj aktivite",
+          feature3Item3: "Aksè sekirize",
+          focusTitle: "Konsantre lor ou biznes. <span class=\"text-white/70\">Nou okip faktir-la.<\/span>",
+          focusSub: "Sirkwi sinp: kree → avoye → ranmas. Si kliyan tarde, Facture.mu ed ou rapel li.",
+          focusPrimary: "Komanse aster",
+          focusSecondary: "Guet kouma li mars",
+          checklistTitle: "Lis kontrol vit",
+          checklistSteps: "3 etap",
+          checklistItem1Title: "Done kliyan",
+          checklistItem1Sub: "Oto-ranpli ek validasion chan.",
+          checklistItem2Title: "Artik ek taks",
+          checklistItem2Sub: "Kalkil otomatik, san fomil.",
+          checklistItem3Title: "Avoye ek swivi",
+          checklistItem3Sub: "PDF + statik + rapel.",
+          focusNote: "Design minimalis, inspire par prodwi finans premium.",
+          previewTitle: "Previzion faktir",
+          issuedBy: "Emet par",
+          invoiceLabel: "Faktir",
+          due: "Dat limit: 15 zour",
+          subtotal: "Sou-total",
+          taxes: "Taks",
+          total: "Total",
+          status: "Statik: Avoye · Swivi aktif",
+          howTitle: "Pret pou faktire dan keki minit",
+          howSub: "Config ou biznes enn sel kou, swazir ou model ek koumanse. Pa ena meni san fin. Pa ena ecran konfiz.",
+          howStep1Title: "Config ou biznes",
+          howStep1Sub: "Logo, numerotasyon, taks, larzan ek done legal.",
+          howStep2Title: "Kree ek avoye",
+          howStep2Sub: "PDF + imiel, avek mesaz kler ek profesionnèl.",
+          howStep3Title: "Ranmas ek kontrol",
+          howStep3Sub: "Statik, dat limit ek rapor sinp pou deside vit.",
+          howPrimary: "Kre kont",
+          howSecondary: "Guet pri",
+          securityTitle: "Sekirite ek kontrol",
+          securitySub: "Design avek mentalite fintech: aksè sekirize, permisyon par rol ek trasabilite.",
+          securityItem1Title: "Aksè par rol",
+          securityItem1Sub: "Definir kisannla kree, aprouv ek get rapor.",
+          securityItem2Title: "Listwar sanzman",
+          securityItem2Sub: "Loj aksion inportan pou travay trankil.",
+          securityItem3Title: "Sovgard ek eksport",
+          securityItem3Sub: "Export kliyan, faktir ek rapor kan ou bizin.",
+          securityItem4Title: "Privasi avan tou",
+          securityItem4Sub: "Ou done servi zis pou fer servis la marse.",
+          pricingTitle: "Pri sinp",
+          pricingSub: "Komanse gratis ek mont plan kan ou bizin. Pa ena ti linet.",
+          pricingContact: "Biz ou plan antrepriz? <a href=\"#cta\" class=\"text-gray-900 underline underline-offset-4\">Anou koze</a>",
+          pricingFree: "Starter",
+          pricingFreePrice: "Gratis",
+          pricingFreeSub: "Pou test tou sirkwi-la.",
+          pricingFreeItem1: "Model bazik",
+          pricingFreeItem2: "Kliyan san limit",
+          pricingFreeItem3: "Exportasion bazik",
+          pricingFreeCta: "Komanse",
+          pricingProBadge: "Rekmande",
+          pricingPro: "Pro",
+          pricingProPrice: "MUR 490<span class=\"text-base font-medium text-gray-500\">/mwa</span>",
+          pricingProSub: "Pou otozom ek ti biznes.",
+          pricingProItem1: "Model premium",
+          pricingProItem2: "Rapel otomatik",
+          pricingProItem3: "Statik ek rapor",
+          pricingProCta: "Esay Pro",
+          pricingTeam: "Team",
+          pricingTeamPrice: "MUR 990<span class=\"text-base font-medium text-gray-500\">/mwa</span>",
+          pricingTeamSub: "Pou lekip avek permisyon ek kontrol.",
+          pricingTeamItem1: "Itilizater ek rol",
+          pricingTeamItem2: "Loj aktivite",
+          pricingTeamItem3: "Sipor prioriter",
+          pricingTeamCta: "Koz ar lavant",
+          ctaTitle: "Esay Facture.mu zordi mem.",
+          ctaSub: "Komanse avek enn kont gratis ek tir ou premie faktir dan keki minit. Si ou anvi, nou migrer ou done depi Excel.",
+          ctaEmailLabel: "Email",
+          ctaEmailPlaceholder: "to@lakonpani.com",
+          ctaButton: "Kre kont gratis",
+          ctaNote: "Pena kart. Kapav anil kan ou anvi.",
+          faqTitle: "Kestion souvan poze",
+          faq1Q: "Mo kapav servi mo logo ek mo kouler?",
+          faq1A: "Wi. Ou kapav personnalize model, detay legal, numerotasyon ek stil.",
+          faq2Q: "Li bon pou lekip?",
+          faq2A: "Wi. Avek plan Team ou kapav azout itilizater, rol ek kontrol aktivite.",
+          faq3Q: "Mo kapav eksport mo done?",
+          faq3A: "Wi. Export faktir, kliyan ek rapor pou kontabilite ouswa backup.",
+          faq4Q: "Ena sipor?",
+          faq4A: "Enkli. Ek sipor prioriter dan Team.",
+          footerTagline: "Faktir elektwonik minimalis: vit, prop ek vre kontrol.",
+          footerProduct: "Prodwi",
+          footerFeatures: "Fonksyonalite",
+          footerHow: "Kouma li mars",
+          footerPricing: "Pri",
+          footerCompany: "Konpani",
+          footerContact: "Kontak",
+          footerTerms: "Term",
+          footerPrivacy: "Privasi",
+          footerSupport: "Sipor",
+          footerFaq: "FAQ",
+          footerHelpCenter: "Sant led",
+          footerStatus: "Eta sistem",
+          footerCopy: "© <span id=\"y\"></span> Facture.mu. Tou drwa rezève.",
+          footerPrivacyLink: "Privasi",
+          footerTermsLink: "Term",
+          footerCookies: "Biskwi"
+        }
+      };
+
+      function applyTranslations(lang) {
+        const selected = translations[lang] ? lang : 'fr';
+        document.documentElement.lang = selected;
+        document.title = translations[selected].title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', translations[selected].metaDescription);
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          const value = translations[selected][key];
+          if (value !== undefined) {
+            if (el.hasAttribute('data-i18n-html')) {
+              el.innerHTML = value;
+            } else {
+              el.textContent = value;
+            }
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          const value = translations[selected][key];
+          if (value !== undefined) {
+            el.setAttribute('placeholder', value);
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-option]').forEach((option) => {
+          const key = option.getAttribute('data-i18n-option');
+          const value = translations[selected][key];
+          if (value !== undefined) {
+            option.textContent = value;
+          }
+        });
+
+        const selector = document.getElementById('language-select');
+        if (selector && selector.value !== selected) {
+          selector.value = selected;
+        }
+      }
+
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      const languageSelect = document.getElementById('language-select');
+      if (languageSelect) {
+        languageSelect.addEventListener('change', (event) => {
+          applyTranslations(event.target.value);
+        });
+      }
+
+      applyTranslations('fr');
     </script>
   </footer>
 </body>
