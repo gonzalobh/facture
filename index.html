@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facture.mu – Facturación electrónica simple</title>
+  <meta name="description" content="Crea facturas profesionales, automatiza impuestos y controla cobros en tiempo real con Facture.mu. Diseño minimalista, rápido y seguro." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+          boxShadow: {
+            soft: "0 14px 50px rgba(0,0,0,.10)",
+            soft2: "0 10px 30px rgba(0,0,0,.08)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* micro detalle para “feeling” premium */
+    .grain {
+      background-image:
+        radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: .20;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 65%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 65%);
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-900">
+  <!-- Top Notice -->
+  <div class="w-full bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+      <p class="text-xs sm:text-sm text-gray-700">
+        Facture.mu • Facturación electrónica moderna para Isla Mauricio
+      </p>
+      <a href="#pricing" class="text-xs sm:text-sm text-gray-900 underline underline-offset-4 hover:text-black">
+        Ver planes
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-2">
+        <span class="w-9 h-9 rounded-2xl bg-black text-white grid place-items-center shadow-soft2">
+          <span class="text-sm font-semibold">F</span>
+        </span>
+        <span class="font-semibold tracking-tight">Facture.mu</span>
+      </a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-700">
+        <a href="#features" class="hover:text-black">Funciones</a>
+        <a href="#how" class="hover:text-black">Cómo funciona</a>
+        <a href="#security" class="hover:text-black">Seguridad</a>
+        <a href="#faq" class="hover:text-black">FAQ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2">
+        <a href="#login" class="hidden sm:inline-flex px-4 py-2 rounded-full text-sm font-medium text-gray-900 hover:bg-gray-100">
+          Iniciar sesión
+        </a>
+        <a href="#cta"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold bg-black text-white hover:bg-gray-900 shadow-soft2">
+          Crear cuenta
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="grain absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[900px]"></div>
+      <div class="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full bg-gray-100 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-[520px] h-[520px] rounded-full bg-gray-50 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10 lg:pt-20 lg:pb-16 relative">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs text-gray-700 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-900"></span>
+            Facturación electrónica sin fricción
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.08]">
+            Factura fácil y sin errores con
+            <span class="text-gray-500">Facture.mu</span>
+          </h1>
+
+          <p class="mt-5 text-base sm:text-lg text-gray-600 max-w-xl">
+            Crea facturas profesionales, automatiza cálculos, gestiona clientes y controla tus cobros en tiempo real.
+            Minimalista, rápido y hecho para trabajar en serio.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#cta"
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft">
+              Probar gratis
+            </a>
+            <a href="#features"
+              class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
+              Ver funciones
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-4 text-sm text-gray-600">
+            <div class="flex -space-x-2">
+              <span class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"></span>
+              <span class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></span>
+              <span class="w-8 h-8 rounded-full bg-gray-100 border-2 border-white"></span>
+            </div>
+            <p>
+              <span class="font-semibold text-gray-900">95%</span> de usuarios dicen “más rápido que mi Excel”.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hero Card -->
+        <div class="lg:col-span-6">
+          <div class="relative bg-white border border-gray-200 rounded-3xl shadow-soft p-5 sm:p-7">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm text-gray-600">Panel</p>
+                <p class="text-lg font-semibold">Resumen de facturación</p>
+              </div>
+              <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700">
+                <span class="w-2 h-2 rounded-full bg-gray-900"></span> En tiempo real
+              </span>
+            </div>
+
+            <div class="mt-6 grid sm:grid-cols-3 gap-3">
+              <div class="rounded-2xl border border-gray-200 p-4">
+                <p class="text-xs text-gray-600">Cobrado (mes)</p>
+                <p class="mt-2 text-xl font-semibold">MUR 128,400</p>
+                <p class="mt-1 text-xs text-gray-500">+12% vs. mes pasado</p>
+              </div>
+              <div class="rounded-2xl border border-gray-200 p-4">
+                <p class="text-xs text-gray-600">Pendiente</p>
+                <p class="mt-2 text-xl font-semibold">MUR 19,250</p>
+                <p class="mt-1 text-xs text-gray-500">8 facturas</p>
+              </div>
+              <div class="rounded-2xl border border-gray-200 p-4">
+                <p class="text-xs text-gray-600">Automatizaciones</p>
+                <p class="mt-2 text-xl font-semibold">Activas</p>
+                <p class="mt-1 text-xs text-gray-500">Recordatorios + impuestos</p>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-2xl bg-gray-50 border border-gray-200 p-4">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold">Factura #000245</p>
+                <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Enviada</span>
+              </div>
+              <div class="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+                <div class="rounded-xl bg-white border border-gray-200 p-3">
+                  <p class="text-xs text-gray-500">Cliente</p>
+                  <p class="mt-1 font-medium">Ocean Trading Ltd.</p>
+                </div>
+                <div class="rounded-xl bg-white border border-gray-200 p-3">
+                  <p class="text-xs text-gray-500">Total</p>
+                  <p class="mt-1 font-medium">MUR 6,450</p>
+                </div>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">PDF</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Link de pago</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Recordatorio</span>
+                <span class="text-xs px-2.5 py-1 rounded-full bg-white border border-gray-200 text-gray-700">Estado</span>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 rounded-3xl bg-black text-white shadow-soft grid place-items-center rotate-6">
+              <div class="text-center">
+                <p class="text-xs opacity-80">Setup</p>
+                <p class="text-lg font-semibold">5 min</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-gray-500">
+            * Vista demo. Puedes adaptar impuestos, plantillas y campos según tu negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos -->
+  <section class="border-y border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <p class="text-sm text-gray-500 text-center">Usado por equipos que quieren orden, control y velocidad</p>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 opacity-80">
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Hotel</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Agencia</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Comercio</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Freelance</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">PYME</div>
+        <div class="h-12 rounded-2xl border border-gray-200 bg-gray-50 grid place-items-center text-sm text-gray-600">Servicios</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Todo lo esencial, sin ruido</h2>
+        <p class="mt-4 text-gray-600">
+          Pensado para que emitas, envíes y cobres. Con automatizaciones que te ahorran horas cada semana.
+        </p>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+        <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
+          <div class="w-11 h-11 rounded-2xl bg-black text-white grid place-items-center">1</div>
+          <h3 class="mt-5 font-semibold text-lg">Facturas en segundos</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Plantillas limpias, numeración automática, clientes guardados y productos frecuentes.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>PDF profesional</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Monedas e impuestos</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Notas y términos</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
+          <div class="w-11 h-11 rounded-2xl bg-gray-900 text-white grid place-items-center">2</div>
+          <h3 class="mt-5 font-semibold text-lg">Cobros y seguimiento</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Controla estados (borrador, enviada, pagada, vencida) y evita olvidos.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Recordatorios automáticos</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Historial por cliente</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Reportes claros</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-gray-200 p-6 shadow-soft2">
+          <div class="w-11 h-11 rounded-2xl bg-gray-800 text-white grid place-items-center">3</div>
+          <h3 class="mt-5 font-semibold text-lg">Equipo y permisos</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Invita usuarios, define roles y mantén orden en la operación.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Roles por área</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Registro de actividad</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Acceso seguro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark band section (like screenshot) -->
+  <section class="bg-gray-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+            Enfócate en tu negocio.
+            <span class="text-white/70">Nosotros en la factura.</span>
+          </h2>
+          <p class="mt-4 text-white/70 max-w-xl">
+            Flujo simple: creas → envías → cobras. Y si el cliente se atrasa, Facture.mu te ayuda a recordarle.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100">
+              Empezar ahora
+            </a>
+            <a href="#how" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5">
+              Ver cómo funciona
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold">Checklist rápido</p>
+              <span class="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10">3 pasos</span>
+            </div>
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
+                <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
+                <div>
+                  <p class="font-medium">Datos del cliente</p>
+                  <p class="text-white/70">Autocompletado y validación de campos.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
+                <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
+                <div>
+                  <p class="font-medium">Ítems e impuestos</p>
+                  <p class="text-white/70">Cálculo automático, sin fórmulas.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
+                <span class="mt-0.5 w-2 h-2 rounded-full bg-white"></span>
+                <div>
+                  <p class="font-medium">Envío y control</p>
+                  <p class="text-white/70">PDF + estado + recordatorios.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-white/60">Diseño minimalista, inspirado en productos financieros premium.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-soft2">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold">Vista previa de factura</p>
+              <span class="text-xs px-2 py-1 rounded-full bg-white border border-gray-200 text-gray-700">PDF</span>
+            </div>
+
+            <div class="mt-5 rounded-2xl bg-white border border-gray-200 p-5">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-xs text-gray-500">Emitida por</p>
+                  <p class="font-semibold">Facture.mu Demo Ltd</p>
+                  <p class="text-xs text-gray-500 mt-1">Port Louis, MU</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-500">Factura</p>
+                  <p class="font-semibold">#000245</p>
+                  <p class="text-xs text-gray-500 mt-1">Vence: 15 días</p>
+                </div>
+              </div>
+
+              <div class="mt-4 grid grid-cols-3 gap-2 text-xs text-gray-600">
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
+                  <p class="text-gray-500">Subtotal</p>
+                  <p class="mt-1 font-semibold text-gray-900">MUR 5,800</p>
+                </div>
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
+                  <p class="text-gray-500">Impuestos</p>
+                  <p class="mt-1 font-semibold text-gray-900">MUR 650</p>
+                </div>
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-3">
+                  <p class="text-gray-500">Total</p>
+                  <p class="mt-1 font-semibold text-gray-900">MUR 6,450</p>
+                </div>
+              </div>
+
+              <div class="mt-4 h-2 rounded-full bg-gray-100 overflow-hidden">
+                <div class="h-full w-2/3 bg-gray-900"></div>
+              </div>
+              <p class="mt-2 text-xs text-gray-500">Estado: Enviada · Seguimiento activado</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Listo para facturar en minutos</h2>
+          <p class="mt-4 text-gray-600 max-w-xl">
+            Configuras tu empresa una vez, eliges tu plantilla y empiezas. Sin menús eternos. Sin pantallas confusas.
+          </p>
+
+          <div class="mt-8 space-y-5">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-2xl bg-black text-white grid place-items-center font-semibold">A</div>
+              <div>
+                <p class="font-semibold">Configura tu negocio</p>
+                <p class="text-sm text-gray-600">Logo, numeración, impuestos, moneda y datos legales.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-2xl bg-gray-900 text-white grid place-items-center font-semibold">B</div>
+              <div>
+                <p class="font-semibold">Crea y envía</p>
+                <p class="text-sm text-gray-600">PDF + email, con mensajes claros y profesionalismo.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-2xl bg-gray-800 text-white grid place-items-center font-semibold">C</div>
+              <div>
+                <p class="font-semibold">Cobra y controla</p>
+                <p class="text-sm text-gray-600">Estados, vencimientos y reportes simples para decidir rápido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#cta" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900 shadow-soft">
+              Crear cuenta
+            </a>
+            <a href="#pricing" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
+              Ver precios
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section id="security" class="bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Seguridad y control</h2>
+          <p class="mt-4 text-gray-600">
+            Diseñado con mentalidad “fintech”: acceso seguro, permisos por rol y trazabilidad.
+          </p>
+        </div>
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+          <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+            <p class="font-semibold">Acceso por roles</p>
+            <p class="mt-2 text-sm text-gray-600">Define quién crea, quién aprueba y quién ve reportes.</p>
+          </div>
+          <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+            <p class="font-semibold">Historial de cambios</p>
+            <p class="mt-2 text-sm text-gray-600">Registro de acciones clave para trabajar con tranquilidad.</p>
+          </div>
+          <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+            <p class="font-semibold">Backups y exportación</p>
+            <p class="mt-2 text-sm text-gray-600">Exporta clientes, facturas y reportes cuando lo necesites.</p>
+          </div>
+          <div class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+            <p class="font-semibold">Privacidad primero</p>
+            <p class="mt-2 text-sm text-gray-600">Tus datos se usan solo para operar el servicio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Precios simples</h2>
+          <p class="mt-4 text-gray-600">
+            Empieza gratis y sube de plan cuando lo necesites. Sin letra chica.
+          </p>
+        </div>
+        <div class="text-sm text-gray-600">
+          ¿Necesitas plan empresa? <a href="#cta" class="text-gray-900 underline underline-offset-4">Hablemos</a>
+        </div>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+        <!-- Free -->
+        <div class="rounded-3xl border border-gray-200 p-7 shadow-soft2">
+          <p class="text-sm text-gray-600">Starter</p>
+          <p class="mt-2 text-3xl font-semibold">Gratis</p>
+          <p class="mt-2 text-sm text-gray-600">Para probar el flujo completo.</p>
+          <ul class="mt-6 space-y-3 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Plantilla básica</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Clientes ilimitados</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Exportación básica</li>
+          </ul>
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
+            Empezar
+          </a>
+        </div>
+
+        <!-- Pro (highlight) -->
+        <div class="rounded-3xl border border-gray-900 p-7 shadow-soft bg-white relative">
+          <span class="absolute -top-3 left-7 text-xs px-3 py-1 rounded-full bg-black text-white">Recomendado</span>
+          <p class="text-sm text-gray-600">Pro</p>
+          <p class="mt-2 text-3xl font-semibold">MUR 490<span class="text-base font-medium text-gray-500">/mes</span></p>
+          <p class="mt-2 text-sm text-gray-600">Para autónomos y pymes.</p>
+          <ul class="mt-6 space-y-3 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Plantillas premium</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Recordatorios automáticos</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Estados y reportes</li>
+          </ul>
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-black text-white font-semibold hover:bg-gray-900">
+            Probar Pro
+          </a>
+        </div>
+
+        <!-- Team -->
+        <div class="rounded-3xl border border-gray-200 p-7 shadow-soft2">
+          <p class="text-sm text-gray-600">Team</p>
+          <p class="mt-2 text-3xl font-semibold">MUR 990<span class="text-base font-medium text-gray-500">/mes</span></p>
+          <p class="mt-2 text-sm text-gray-600">Para equipos con permisos y control.</p>
+          <ul class="mt-6 space-y-3 text-sm text-gray-700">
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Usuarios y roles</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Registro de actividad</li>
+            <li class="flex gap-2"><span class="mt-1 w-1.5 h-1.5 bg-gray-900 rounded-full"></span>Soporte prioritario</li>
+          </ul>
+          <a href="#cta" class="mt-7 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50">
+            Hablar con ventas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div class="rounded-[2rem] bg-gray-950 text-white p-8 sm:p-10 lg:p-12 shadow-soft overflow-hidden relative">
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
+
+        <div class="relative grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7">
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+              Prueba Facture.mu hoy.
+            </h2>
+            <p class="mt-4 text-white/70 max-w-xl">
+              Empieza con una cuenta gratuita y emite tus primeras facturas en minutos.
+              Si quieres, migramos tus datos desde Excel.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <form class="rounded-3xl bg-white/5 border border-white/10 p-6">
+              <label class="block text-sm font-medium">Email</label>
+              <input
+                type="email"
+                placeholder="tu@empresa.com"
+                class="mt-2 w-full px-4 py-3 rounded-2xl bg-white text-gray-900 placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-white/40"
+              />
+              <button type="button"
+                class="mt-4 w-full inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-gray-950 font-semibold hover:bg-gray-100">
+                Crear cuenta gratis
+              </button>
+              <p class="mt-3 text-xs text-white/60">
+                Sin tarjeta. Puedes cancelar cuando quieras.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">Preguntas frecuentes</h2>
+      <div class="mt-10 grid lg:grid-cols-2 gap-6">
+        <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+          <summary class="cursor-pointer font-semibold">¿Puedo usar mi logo y mis colores?</summary>
+          <p class="mt-3 text-sm text-gray-600">Sí. Puedes personalizar plantilla, datos legales, numeración y estilo.</p>
+        </details>
+        <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+          <summary class="cursor-pointer font-semibold">¿Sirve para equipos?</summary>
+          <p class="mt-3 text-sm text-gray-600">Sí. Con el plan Team puedes agregar usuarios, roles y control de actividad.</p>
+        </details>
+        <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+          <summary class="cursor-pointer font-semibold">¿Puedo exportar mis datos?</summary>
+          <p class="mt-3 text-sm text-gray-600">Sí. Exporta facturas, clientes y reportes para contabilidad o respaldo.</p>
+        </details>
+        <details class="rounded-3xl bg-white border border-gray-200 p-6 shadow-soft2">
+          <summary class="cursor-pointer font-semibold">¿Hay soporte?</summary>
+          <p class="mt-3 text-sm text-gray-600">Incluido. Y soporte prioritario en Team.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-9 h-9 rounded-2xl bg-black text-white grid place-items-center shadow-soft2">
+              <span class="text-sm font-semibold">F</span>
+            </span>
+            <span class="font-semibold">Facture.mu</span>
+          </div>
+          <p class="mt-4 text-sm text-gray-600 max-w-sm">
+            Facturación electrónica minimalista: rápida, limpia y con control real.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+          <div>
+            <p class="font-semibold">Producto</p>
+            <ul class="mt-3 space-y-2 text-gray-600">
+              <li><a class="hover:text-black" href="#features">Funciones</a></li>
+              <li><a class="hover:text-black" href="#how">Cómo funciona</a></li>
+              <li><a class="hover:text-black" href="#pricing">Precios</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold">Compañía</p>
+            <ul class="mt-3 space-y-2 text-gray-600">
+              <li><a class="hover:text-black" href="#">Contacto</a></li>
+              <li><a class="hover:text-black" href="#">Términos</a></li>
+              <li><a class="hover:text-black" href="#">Privacidad</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold">Soporte</p>
+            <ul class="mt-3 space-y-2 text-gray-600">
+              <li><a class="hover:text-black" href="#faq">FAQ</a></li>
+              <li><a class="hover:text-black" href="#">Centro de ayuda</a></li>
+              <li><a class="hover:text-black" href="#">Estado del sistema</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <p class="text-xs text-gray-500">© <span id="y"></span> Facture.mu. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-600">
+          <a class="hover:text-black" href="#">Privacidad</a>
+          <span class="text-gray-300">•</span>
+          <a class="hover:text-black" href="#">Términos</a>
+          <span class="text-gray-300">•</span>
+          <a class="hover:text-black" href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
