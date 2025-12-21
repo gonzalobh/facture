@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facture.mu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:#28a745;
+      --green-dark:#1f8a38;
+      --gray:#f5f5f5;
+      --text:#222;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:var(--gray);color:var(--text);line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    .wrapper{max-width:1200px;margin:0 auto;padding:0 18px;}
+    header{background:var(--green);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.08);position:sticky;top:0;z-index:10;}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:14px;flex-wrap:wrap;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;}
+    .brand img{width:44px;height:44px;object-fit:contain;}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:22px;font-weight:600;border:2px solid #fff;transition:.2s;background:transparent;color:#fff;}
+    .btn.primary{background:#fff;color:var(--green);}
+    .hero{background:var(--gray);padding:40px 0;}
+    .hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;align-items:center;}
+    .hero h1{font-size:30px;margin:12px 0;font-weight:700;line-height:1.3;}
+    .hero p{color:#444;font-weight:400;}
+    .hero-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+    .hero-actions .btn{color:#fff;background:var(--green);border-color:var(--green);}    
+    .hero-actions .btn.secondary{background:#fff;color:var(--green);}
+    .hero-card{background:#fff;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:18px;}
+    .mockup{background:linear-gradient(135deg,#e8f5e9,#d6f1d9);border-radius:16px;padding:14px;border:1px solid #d7e8d9;}
+    .section{background:#fff;padding:40px 0;margin:18px 0;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.06);}
+    .section.gray{background:var(--gray);box-shadow:none;}
+    .section h2{text-align:center;font-size:26px;margin-bottom:12px;font-weight:700;}
+    .section p.sub{text-align:center;color:#555;margin-bottom:18px;}
+    .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:12px;margin-top:16px;}
+    .logo-box{background:#fff;border:1px solid #e2e2e2;border-radius:12px;padding:10px;text-align:center;font-weight:600;font-size:13px;}
+    .columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px;}
+    .card{background:#fff;border-radius:18px;border:1px solid #e3e3e3;padding:16px;box-shadow:0 10px 25px rgba(0,0,0,.05);}
+    .card.dark{background:#1a1a1a;color:#fff;border-color:transparent;}
+    .card.dark p{color:#dcdcdc;}
+    .icon-circle{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:700;background:var(--green);color:#fff;}
+    .list{list-style:none;margin-top:10px;color:#555;font-size:14px;}
+    .list li{margin:6px 0;display:flex;gap:8px;align-items:flex-start;}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+    .step{background:#fff;border:1px solid #e5e5e5;border-radius:18px;padding:14px;display:flex;gap:10px;align-items:flex-start;box-shadow:0 12px 30px rgba(0,0,0,.05);}
+    .step span{background:var(--green);color:#fff;border-radius:12px;width:34px;height:34px;display:grid;place-items:center;font-weight:700;}
+    .cta{background:#fff;padding:30px;border-radius:24px;box-shadow:0 14px 34px rgba(0,0,0,.09);text-align:center;margin:18px 0;}
+    .cta .btn{background:var(--green);border-color:var(--green);color:#fff;padding:12px 22px;}
+    .faq{margin-top:18px;}
+    .faq details{background:#fff;border-radius:14px;border:1px solid #e5e5e5;padding:12px 16px;margin-bottom:10px;box-shadow:0 8px 20px rgba(0,0,0,.05);}
+    footer{background:#fff;padding:22px 0;text-align:center;color:#555;font-size:14px;margin:20px 0 40px;border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.05);}    
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e3e3e3;border-radius:12px;padding:10px 12px;margin:6px 0;box-shadow:0 6px 18px rgba(0,0,0,.05);}
+    .mobile-mock{max-width:240px;margin:0 auto;border-radius:24px;overflow:hidden;border:2px solid #e0e0e0;box-shadow:0 12px 28px rgba(0,0,0,.08);}
+    @media (max-width:640px){
+      header{position:static;}
+      .nav{justify-content:center;text-align:center;}
+      .nav-links{justify-content:center;}
+      .hero h1{font-size:24px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrapper nav">
+      <div class="brand">
+        <img src="https://i.imgur.com/TZJQqRn.png" alt="Facture.mu logo">
+        <span>Facture.mu</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" aria-label="Changer de langue">FR</a>
+        <a href="#">Fonctionnalités</a>
+        <a href="#">Comment ça marche</a>
+        <a href="#">Tarifs</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="nav-links" style="gap:8px;">
+        <a class="btn" href="#">Se connecter</a>
+        <a class="btn primary" href="#">Créer un compte</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="badge" style="font-size:12px;color:#28a745;">Facturation simple, robuste et élégante</p>
+          <h1>La facturation simplifiée pour les entreprises et grandes entreprises en Maurice</h1>
+          <p>Facture.mu vous offre une solution complète et sécurisée pour gérer vos factures, vos clients et vos paiements. Conçu pour les entreprises mauriciennes, avec support méticuleux.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#">Je veux en savoir +</a>
+            <a class="btn secondary" href="#">Créer un compte</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="mockup">
+            <div style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 18px rgba(0,0,0,.05);">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <p style="font-size:12px;color:#666;">Automatisation</p>
+                  <p style="font-weight:600;">Rappels + Paiements</p>
+                </div>
+                <div style="background:#28a745;color:#fff;border-radius:18px;padding:6px 10px;font-size:12px;">Actifs</div>
+              </div>
+              <ul class="list" style="margin-top:10px;color:#333;">
+                <li><strong>1.</strong> Rappel automatique pour toutes les factures en retard</li>
+                <li><strong>2.</strong> Envoi automatique du lien de paiement aux clients</li>
+                <li><strong>3.</strong> Confirmation automatique de la facture réglée</li>
+              </ul>
+              <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+                <span class="badge" style="border-color:#cde8d0;">Rappels automatiques</span>
+                <span class="badge" style="border-color:#cde8d0;">Paiements</span>
+                <span class="badge" style="border-color:#cde8d0;">Prompts IA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tout ce dont vous avez besoin pour facturer simplement</h2>
+      <p class="sub">La solution qui simplifie vos factures, des devis aux paiements en ligne. Conçue pour les entreprises mauriciennes, avec support méticuleux</p>
+      <div class="columns">
+        <div class="card">
+          <div class="icon-circle">01</div>
+          <h3>Créez vos factures, devis et reçus en quelques secondes</h3>
+          <ul class="list">
+            <li>+</li>
+            <li>Factures PDF personnalisables</li>
+            <li>Numérotation automatique</li>
+            <li>Notes et conditions</li>
+            <li>Devises multiples et taxes incluses</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon-circle">02</div>
+          <h3>Automatisez le suivi et les paiements</h3>
+          <ul class="list">
+            <li>+</li>
+            <li>Rappels automatiques</li>
+            <li>Lien de paiement</li>
+            <li>Statut de paiement en temps réel</li>
+            <li>Message personnalisé</li>
+            <li>Rapport et historique</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon-circle">03</div>
+          <h3>Connectez votre équipe</h3>
+          <ul class="list">
+            <li>+</li>
+            <li>Invitez jusqu’à 5 utilisateurs</li>
+            <li>Accès rôle basé</li>
+            <li>Journal d’activité</li>
+            <li>Suivi d’équipe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gray">
+      <h2>Concentrez-vous sur votre activité</h2>
+      <p class="sub">Facture.mu s’occupe de la facturation, pour que vous puissiez vous concentrer sur ce qui compte vraiment: votre entreprise.</p>
+      <div class="columns" style="margin-top:10px;align-items:center;">
+        <div class="card" style="border-color:#cde8d0;">
+          <h3 style="margin-bottom:10px;">La facturation simplifiée</h3>
+          <p style="color:#444;">Simple et efficace: 3 étapes pour envoyer vos factures. Facture.mu gère tout.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">
+            <span class="badge">Créer vos factures</span>
+            <span class="badge">Envoyer par email</span>
+            <span class="badge">Suivre les paiements en ligne</span>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <div class="mobile-mock">
+            <div style="background:#28a745;color:#fff;padding:14px;text-align:center;font-weight:600;">Facture.mu</div>
+            <div style="padding:14px;background:#fff;">
+              <p style="font-size:12px;color:#555;">Facture.mu simplifie la facturation pour vos entreprises en Maurice</p>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;">
+                <span class="badge" style="justify-content:space-between;">Si vous avez une question <strong>48K</strong></span>
+                <span class="badge" style="justify-content:space-between;">Si vous avez une question <strong>48K</strong></span>
+                <span class="badge" style="justify-content:space-between;">Si vous avez une question <strong>48K</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Votre assistant de facturation automatique</h2>
+      <p class="sub">Facture.mu automatise et analyse votre facturation en temps réel.</p>
+      <div class="columns">
+        <div class="card">
+          <div style="background:#28a745;color:#fff;padding:12px;border-radius:14px;display:inline-flex;align-items:center;gap:8px;">⚡ Prompts IA: rédiger vos factures, vos rappels et vos messages</div>
+          <div class="mockup" style="margin-top:12px;">
+            <div style="background:#fff;border-radius:12px;padding:12px;font-size:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <strong>Automatisation</strong>
+                <span style="background:#28a745;color:#fff;border-radius:12px;padding:4px 10px;font-size:12px;">Actifs</span>
+              </div>
+              <ol style="margin-top:10px;padding-left:16px;color:#444;">
+                <li>Rappel automatique pour toutes les factures en retard</li>
+                <li>Envoi automatique du lien de paiement aux clients</li>
+                <li>Confirmation automatique de la facture réglée</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px;">Le tableau de bord en temps réel</h3>
+          <p style="color:#555;">Analysez vos factures à partir d’un unique tableau de bord clair qui consolide vos données de paiement, vos risques d’impayé et vos dernières actions et activités.</p>
+          <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;">
+            <div class="card" style="padding:10px;box-shadow:none;border-color:#d7e8d9;">
+              <small style="color:#666;">Encaissements (mois)</small>
+              <strong style="display:block;margin-top:6px;">MUR 128,400</strong>
+              <small style="color:#888;">+12% vs. mois dernier</small>
+            </div>
+            <div class="card" style="padding:10px;box-shadow:none;border-color:#d7e8d9;">
+              <small style="color:#666;">En attente</small>
+              <strong style="display:block;margin-top:6px;">MUR 19,250</strong>
+              <small style="color:#888;">8 factures</small>
+            </div>
+            <div class="card" style="padding:10px;box-shadow:none;border-color:#d7e8d9;">
+              <small style="color:#666;">Automatisations</small>
+              <strong style="display:block;margin-top:6px;">Actives</strong>
+              <small style="color:#888;">Rappels + Taxes</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gray">
+      <h2>Votre équipe</h2>
+      <p class="sub">Collaborez en douceur, avec 5 utilisateurs inclus dans votre abonnement Pro. Une équipe qui fonctionne ensemble est plus productive et plus organisée.</p>
+      <div class="columns" style="margin-top:10px;align-items:center;">
+        <div class="card" style="background:#1a1a1a;color:#fff;">
+          <h3>Invitez votre équipe, vos utilisateurs et rôles</h3>
+          <ul class="list" style="color:#eaeaea;">
+            <li>+ Accès rôle basé, pour inviter votre équipe</li>
+            <li>+ Contrôlez les permissions par rôle</li>
+            <li>+ Compte illimité de clients et factures</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <img src="https://i.imgur.com/7e7ZB8D.png" alt="emoji" style="width:32px;height:32px;">
+            <div>
+              <strong>Jane</strong>
+              <p style="color:#888;font-size:13px;">Responsable</p>
+            </div>
+            <span style="margin-left:auto;background:#28a745;color:#fff;padding:6px 10px;border-radius:12px;font-size:12px;">Invité</span>
+          </div>
+          <p style="margin:10px 0;color:#555;">Merci d’avoir ajouté votre équipe dans Facture.mu.</p>
+          <div style="display:flex;gap:8px;">
+            <span class="badge" style="background:#28a745;color:#fff;border-color:#28a745;">Invité</span>
+            <span class="badge">Accès</span>
+            <span class="badge">Rôles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Pourquoi Facture.mu pour votre entreprise?</h2>
+      <p style="color:#555;margin:10px 0;">En 5 minutes, votre entreprise est prête. Un email et vos factures sont envoyées avec un suivi en temps réel.</p>
+      <a class="btn" href="#">Créer votre compte en 2 minutes</a>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+      <p class="sub">Tout ce que vous devez savoir pour votre facture.</p>
+      <div class="faq">
+        <details open>
+          <summary>Combien d’utilisateurs peut ajouter mon compte Facture.mu ?</summary>
+          <p style="margin-top:8px;color:#555;font-size:14px;">Votre compte Facture.mu peut inviter jusqu’à 5 utilisateurs dans l’option Pro.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je peux personnaliser mes factures ?</summary>
+          <p style="margin-top:8px;color:#555;font-size:14px;">Oui, personnalisez vos couleurs, logos et notes.</p>
+        </details>
+        <details>
+          <summary>Facture.mu offre-t-il un support technique en cas de problèmes ?</summary>
+          <p style="margin-top:8px;color:#555;font-size:14px;">Support disponible pour vous accompagner.</p>
+        </details>
+        <details>
+          <summary>Quelles sont les options de paiement supportées par Facture.mu ?</summary>
+          <p style="margin-top:8px;color:#555;font-size:14px;">Paiements en ligne et virements sont pris en charge.</p>
+        </details>
+        <details>
+          <summary>Est-ce que Facture.mu offre une période d’essai avant de s’engager ?</summary>
+          <p style="margin-top:8px;color:#555;font-size:14px;">Essayez gratuitement pendant quelques jours.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrapper">
+    <p>Facture.mu simplifie la facturation pour les entreprises en Maurice</p>
+  </footer>
+</body>
+</html>
